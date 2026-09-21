@@ -5,6 +5,7 @@ const navigation = [
   { label: "Work", href: "/work" },
   { label: "Services", href: "/services" },
   { label: "About", href: "/about" },
+  { label: "Testimonials", href: "/testimonials" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -100,7 +101,7 @@ const services = [
     <div class="footer__bottom">
       <p>© {currentYear} Atata Labs. All rights reserved.</p>
 
-      <p>Websites and apps built for your business.</p>
+      <p class="footer__tagline">Websites and apps built for your business.</p>
     </div>
   </div>
 </footer>
@@ -275,6 +276,10 @@ const services = [
    */
 
   @media (max-width: 1000px) {
+    .footer__tagline {
+      display: none;
+    }
+
     .footer__main {
       grid-template-columns: 1.4fr 1fr 1fr;
       gap: 56px 40px;

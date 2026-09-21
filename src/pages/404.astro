@@ -1,0 +1,128 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout
+  title="Page Not Found — Atata Labs"
+  description="The page you're looking for doesn't exist."
+>
+  <Header />
+
+  <main>
+    <section class="not-found">
+      <div class="container">
+        <p class="not-found__eyebrow">404</p>
+
+        <h1 class="not-found__title">
+          Page not{" "}<br />
+          found.
+        </h1>
+
+        <p class="not-found__intro">
+          The page you're looking for doesn't exist or may have moved.
+        </p>
+
+        <a class="not-found__button" href="/">
+          Back to home
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .not-found {
+    min-height: calc(100vh - 88px);
+
+    display: flex;
+    align-items: center;
+
+    padding: 120px 0;
+
+    background: var(--color-bg);
+  }
+
+  .not-found__eyebrow {
+    margin: 0 0 28px;
+
+    color: var(--color-accent);
+
+    font-size: 13px;
+    font-weight: 650;
+    line-height: 1;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .not-found__title {
+    max-width: 900px;
+
+    margin: 0 0 36px;
+
+    color: var(--color-text);
+
+    font-size: clamp(64px, 9vw, 120px);
+    font-weight: 700;
+    line-height: 0.9;
+
+    letter-spacing: -0.065em;
+  }
+
+  .not-found__intro {
+    max-width: 520px;
+
+    margin: 0 0 40px;
+
+    color: var(--color-text-secondary);
+
+    font-size: 18px;
+    line-height: 1.65;
+  }
+
+  .not-found__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 14px 20px;
+
+    border-radius: var(--radius-sm);
+
+    background: var(--color-accent);
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+
+    transition:
+      background var(--transition),
+      transform var(--transition);
+  }
+
+  .not-found__button:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 700px) {
+    .not-found {
+      min-height: calc(100vh - 72px);
+      padding: 80px 0;
+    }
+
+    .not-found__title br {
+      display: none;
+    }
+
+    .not-found__intro {
+      font-size: 17px;
+    }
+  }
+</style>

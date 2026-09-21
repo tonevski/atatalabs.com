@@ -33,12 +33,20 @@ const navigation = [
     </nav>
   </div>
 </header>
+<div class="header-spacer" aria-hidden="true"></div>
 
 <style>
-  .header {
-    position: relative;
-    z-index: 10;
+  /* Reserve room for the fixed header so it does not cover page content. */
+  .header,
+  .header-spacer {
     height: 88px;
+  }
+
+  .header {
+    position: fixed;
+    top: 0;
+    inset-inline: 0;
+    z-index: 10;
     border-bottom: 1px solid var(--color-border);
     background: var(--color-bg);
   }
@@ -115,7 +123,8 @@ const navigation = [
   }
 
   @media (max-width: 700px) {
-    .header {
+    .header,
+    .header-spacer {
       height: 72px;
     }
 

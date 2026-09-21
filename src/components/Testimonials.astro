@@ -1,0 +1,396 @@
+<section class="testimonials">
+  <div class="container">
+    <div class="testimonials__header">
+      <div>
+        <p class="testimonials__eyebrow">CLIENT TESTIMONIALS</p>
+
+        <h2 class="testimonials__title">
+          Trusted by clients<br />
+          for years.
+        </h2>
+      </div>
+
+      <p class="testimonials__description">
+        Atata Labs is led by Nikola Tonevski, a developer with more than
+        a decade of experience building and supporting websites and
+        applications for companies around the world.
+      </p>
+    </div>
+
+    <div class="testimonials__grid">
+      <!-- Featured testimonial -->
+
+      <article class="testimonial testimonial--featured">
+        <span class="testimonial__quote-mark" aria-hidden="true">“</span>
+
+        <blockquote>
+          Nikola has led our front-end development work across web and email
+          media for the last 10 years, and we’ve been very impressed with the
+          professionalism and quality of his work. He’s brought the talents of
+          many different types of design and development to our company, and we
+          highly recommend him.
+        </blockquote>
+
+        <footer class="testimonial__author">
+          <img
+            src="/images/testimonials/geoff-domoracki.jpg"
+            alt="Geoff Domoracki"
+            width="48"
+            height="48"
+            loading="lazy"
+          />
+
+          <div class="testimonial__author-info">
+            <strong>Geoff Domoracki</strong>
+            <span>Founder &amp; CEO</span>
+            <span>DevNetwork</span>
+          </div>
+        </footer>
+      </article>
+
+      <!-- Secondary testimonials -->
+
+      <div class="testimonials__secondary">
+        <article class="testimonial">
+          <span class="testimonial__quote-mark" aria-hidden="true">“</span>
+
+          <blockquote>
+            Nikola was an absolute pleasure to work with. We leaned on his
+            expertise throughout the entire website project and he created such
+            an amazing website for us. He was responsive, timely, and
+            professional throughout the entire project. He was also very
+            efficient with his work as well as clear with his communication. I
+            would highly recommend his services and will continue to utilize him
+            for all of our website needs.
+          </blockquote>
+
+          <footer class="testimonial__author">
+            <img
+              src="/images/testimonials/kareem-assassa.jpg"
+              alt="Kareem Assassa"
+              width="48"
+              height="48"
+              loading="lazy"
+            />
+
+            <div class="testimonial__author-info">
+              <strong>Kareem Assassa</strong>
+              <span>CEO</span>
+              <span>International Academy of Aesthetics</span>
+            </div>
+          </footer>
+        </article>
+
+        <article class="testimonial">
+          <span class="testimonial__quote-mark" aria-hidden="true">“</span>
+
+          <blockquote>
+            I’ve worked with Nikola for quite a while now. He’s an amazing
+            developer, quick and to the point, and always on top of all the
+            requests. I never have to follow up on any tasks assigned to him, I
+            can just send him an email and consider it done. Nikola is very
+            knowledgeable in working with WordPress. He has developed and
+            managed 5 different websites for me and my clients and he’s my
+            go-to person for all future websites.
+          </blockquote>
+
+          <footer class="testimonial__author">
+            <img
+              src="/images/testimonials/parisa-bady.jpg"
+              alt="Parisa Bady"
+              width="48"
+              height="48"
+              loading="lazy"
+            />
+
+            <div class="testimonial__author-info">
+              <strong>Parisa Bady</strong>
+              <span>Founder</span>
+              <span>Meros Media</span>
+            </div>
+          </footer>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials {
+    padding: 120px 0;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-bg-subtle);
+  }
+
+  /*
+   * Header
+   */
+
+  .testimonials__header {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+    align-items: end;
+
+    margin-bottom: 72px;
+  }
+
+  .testimonials__eyebrow {
+    margin: 0 0 24px;
+
+    color: var(--color-accent);
+
+    font-size: 13px;
+    font-weight: 650;
+    line-height: 1;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .testimonials__title {
+    margin: 0;
+
+    font-size: clamp(42px, 4.5vw, 64px);
+    font-weight: 700;
+    line-height: 1;
+
+    letter-spacing: -0.05em;
+  }
+
+  .testimonials__description {
+    max-width: 500px;
+    margin: 0;
+
+    color: var(--color-text-secondary);
+
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  /*
+   * Layout
+   */
+
+  .testimonials__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    border-top: 1px solid var(--color-border);
+    border-left: 1px solid var(--color-border);
+  }
+
+  .testimonials__secondary {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  /*
+   * Testimonial
+   */
+
+  .testimonial {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 360px;
+    padding: 48px;
+
+    border-right: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+
+    background: var(--color-bg);
+  }
+
+  .testimonial--featured {
+    min-height: 720px;
+  }
+
+  /*
+   * Quote mark
+   */
+
+  .testimonial__quote-mark {
+    display: block;
+
+    height: 44px;
+    margin-bottom: 32px;
+
+    color: var(--color-accent);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 0.9;
+  }
+
+  /*
+   * Quote
+   */
+
+  .testimonial blockquote {
+    max-width: 610px;
+    margin: 0;
+
+    color: var(--color-text);
+
+    font-size: 18px;
+    font-weight: 450;
+    line-height: 1.65;
+
+    letter-spacing: -0.01em;
+  }
+
+  .testimonial--featured blockquote {
+    font-size: clamp(24px, 2vw, 31px);
+    line-height: 1.45;
+
+    letter-spacing: -0.025em;
+  }
+
+  /*
+   * Author
+   */
+
+  .testimonial__author {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+
+    margin-top: auto;
+    padding-top: 48px;
+  }
+
+.testimonial__author img {
+    width: 52px;
+    height: 52px;
+
+    flex: 0 0 52px;
+
+    padding: 3px;
+
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    object-fit: cover;
+}
+
+  .testimonial__author-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    min-width: 0;
+  }
+
+  .testimonial__author strong {
+    color: var(--color-text);
+
+    font-size: 15px;
+    font-weight: 650;
+    line-height: 1.35;
+  }
+
+  .testimonial__author span {
+    color: var(--color-text-secondary);
+
+    font-size: 13px;
+    line-height: 1.35;
+  }
+
+  /*
+   * Tablet
+   */
+
+  @media (max-width: 900px) {
+    .testimonials {
+      padding: 96px 0;
+    }
+
+    .testimonials__header {
+      grid-template-columns: 1fr;
+      gap: 28px;
+
+      margin-bottom: 64px;
+    }
+
+    .testimonials__title br {
+      display: none;
+    }
+
+    .testimonials__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .testimonials__secondary {
+      grid-template-rows: auto;
+    }
+
+    .testimonial,
+    .testimonial--featured {
+      min-height: auto;
+    }
+
+    .testimonial {
+      padding: 40px;
+    }
+
+    .testimonial__author {
+      margin-top: 56px;
+      padding-top: 0;
+    }
+  }
+
+  /*
+   * Mobile
+   */
+
+  @media (max-width: 520px) {
+    .testimonials {
+      padding: 80px 0;
+    }
+
+    .testimonials__header {
+      margin-bottom: 48px;
+    }
+
+    .testimonials__description {
+      font-size: 17px;
+    }
+
+    .testimonial {
+      padding: 32px 28px;
+    }
+
+    .testimonial__quote-mark {
+      height: 38px;
+      margin-bottom: 24px;
+
+      font-size: 62px;
+    }
+
+    .testimonial blockquote,
+    .testimonial--featured blockquote {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .testimonial__author {
+      gap: 12px;
+
+      margin-top: 40px;
+    }
+
+    .testimonial__author img {
+        width: 48px;
+        height: 48px;
+
+        flex-basis: 48px;
+        }
+  }
+</style>

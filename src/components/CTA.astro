@@ -1,0 +1,233 @@
+<section class="cta">
+  <div class="container">
+    <div class="cta__inner">
+      <p class="cta__eyebrow">HAVE A PROJECT IN MIND?</p>
+
+      <div class="cta__content">
+        <h2 class="cta__title">
+          Let’s build something<br />
+          that works for your business.
+        </h2>
+
+        <div class="cta__aside">
+          <p class="cta__description">
+            Whether you need a new website, a web or mobile application,
+            or ongoing development support, tell us what you’re working on.
+          </p>
+
+          <a class="cta__button" href="/contact">
+            Start a project
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta {
+    position: relative;
+    overflow: hidden;
+
+    padding: 120px 0;
+
+    background: var(--color-text);
+    color: #ffffff;
+  }
+
+  /*
+   * Subtle background grid
+   */
+
+  .cta::before {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+      linear-gradient(
+        rgba(255, 255, 255, 0.035) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.035) 1px,
+        transparent 1px
+      );
+
+    background-size: 64px 64px;
+
+    content: "";
+    pointer-events: none;
+  }
+
+  /*
+   * Subtle pink glow
+   */
+
+  .cta::after {
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    right: -180px;
+    bottom: -300px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 16, 83, 0.12);
+    filter: blur(120px);
+
+    content: "";
+    pointer-events: none;
+  }
+
+  .cta__inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  /*
+   * Eyebrow
+   */
+
+  .cta__eyebrow {
+    margin: 0 0 32px;
+
+    color: var(--color-accent);
+
+    font-size: 13px;
+    font-weight: 650;
+    line-height: 1;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /*
+   * Content
+   */
+
+  .cta__content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+    align-items: end;
+  }
+
+  .cta__title {
+    max-width: 780px;
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: clamp(48px, 5.4vw, 76px);
+    font-weight: 700;
+    line-height: 1;
+
+    letter-spacing: -0.055em;
+  }
+
+  .cta__aside {
+    max-width: 480px;
+  }
+
+  .cta__description {
+    margin: 0 0 32px;
+
+    color: rgba(255, 255, 255, 0.62);
+
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  /*
+   * Button
+   */
+
+  .cta__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 14px 20px;
+
+    border-radius: var(--radius-sm);
+
+    background: var(--color-accent);
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+
+    transition:
+      background var(--transition),
+      transform var(--transition);
+  }
+
+  .cta__button span {
+    transition: transform var(--transition);
+  }
+
+  .cta__button:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-1px);
+  }
+
+  .cta__button:hover span {
+    transform: translate(2px, -2px);
+  }
+
+  /*
+   * Tablet
+   */
+
+  @media (max-width: 900px) {
+    .cta {
+      padding: 96px 0;
+    }
+
+    .cta__content {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .cta__title br {
+      display: none;
+    }
+
+    .cta__aside {
+      max-width: 600px;
+    }
+  }
+
+  /*
+   * Mobile
+   */
+
+  @media (max-width: 520px) {
+    .cta {
+      padding: 80px 0;
+    }
+
+    .cta__eyebrow {
+      margin-bottom: 24px;
+    }
+
+    .cta__content {
+      gap: 32px;
+    }
+
+    .cta__title {
+      font-size: clamp(42px, 12vw, 56px);
+    }
+
+    .cta__description {
+      margin-bottom: 28px;
+
+      font-size: 17px;
+    }
+  }
+</style>

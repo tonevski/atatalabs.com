@@ -1,0 +1,135 @@
+---
+const navigation = [
+  { label: "Work", href: "/work" },
+  { label: "Services", href: "/services" },
+  { label: "About", href: "/about" },
+];
+---
+
+<header class="header">
+  <div class="container header__inner">
+    <a class="logo" href="/" aria-label="Atata Labs home">
+      <span>ATATA</span>
+      <span class="logo__labs">LABS</span>
+    </a>
+
+    <nav class="nav" aria-label="Main navigation">
+      <ul class="nav__list">
+        {
+          navigation.map((item) => (
+            <li>
+              <a class="nav__link" href={item.href}>
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+
+      <a class="contact" href="/contact">
+        Start a project
+        <span aria-hidden="true">↗</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: relative;
+    z-index: 10;
+    height: 88px;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-bg);
+  }
+
+  .header__inner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+    .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 18px;
+    font-weight: 750;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    }
+
+    .logo__labs {
+    color: var(--color-accent);
+    font-size: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+    }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+  }
+
+  .nav__list {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .nav__link {
+    color: var(--color-text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    transition: color var(--transition);
+  }
+
+  .nav__link:hover {
+    color: var(--color-text);
+  }
+
+  .contact {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: var(--radius-sm);
+    background: var(--color-text);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    transition:
+      transform var(--transition),
+      background var(--transition);
+  }
+
+  .contact:hover {
+    background: #000;
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 700px) {
+    .header {
+      height: 72px;
+    }
+
+    .nav__list {
+      display: none;
+    }
+
+    .nav {
+      gap: 0;
+    }
+
+    .contact {
+      padding: 9px 13px;
+      font-size: 13px;
+    }
+  }
+</style>

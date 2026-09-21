@@ -1,0 +1,204 @@
+<section class="credibility">
+  <div class="container">
+    <div class="credibility__header">
+      <p class="credibility__eyebrow">
+        BUILT FOR LONG-TERM PARTNERSHIPS
+      </p>
+
+      <h2 class="credibility__title">
+        We build relationships<br />
+        that last.
+      </h2>
+
+      <p class="credibility__description">
+        Our longest client relationships span years, not projects.
+        We stay around to build, improve, and support what comes next.
+      </p>
+    </div>
+
+    <div class="credibility__stats">
+      <div class="credibility__stat">
+        <strong class="credibility__number">10+ years</strong>
+
+        <div>
+          <h3>DevNetwork</h3>
+          <p>Ongoing development partnership</p>
+        </div>
+      </div>
+
+      <div class="credibility__stat">
+        <strong class="credibility__number">8+ years</strong>
+
+        <div>
+          <h3>Meros Media</h3>
+          <p>Ongoing development partnership</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .credibility {
+    padding: 120px 0;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-bg);
+  }
+
+  .credibility__header {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    column-gap: 80px;
+    align-items: end;
+
+    margin-bottom: 80px;
+  }
+
+  .credibility__eyebrow {
+    grid-column: 1 / -1;
+
+    margin: 0 0 24px;
+
+    color: var(--color-accent);
+
+    font-size: 13px;
+    font-weight: 650;
+    line-height: 1;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .credibility__title {
+    margin: 0;
+
+    font-size: clamp(42px, 4.5vw, 64px);
+    font-weight: 700;
+    line-height: 1;
+
+    letter-spacing: -0.05em;
+  }
+
+  .credibility__description {
+    max-width: 480px;
+    margin: 0;
+
+    color: var(--color-text-secondary);
+
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .credibility__stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    border-top: 1px solid var(--color-border);
+  }
+
+  .credibility__stat {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 32px;
+
+    padding: 40px 0;
+  }
+
+  .credibility__stat:first-child {
+    padding-right: 48px;
+
+    border-right: 1px solid var(--color-border);
+  }
+
+  .credibility__stat:last-child {
+    padding-left: 48px;
+  }
+
+  .credibility__number {
+    color: var(--color-text);
+
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1;
+
+    letter-spacing: -0.04em;
+  }
+
+  .credibility__stat h3 {
+    margin: 0 0 6px;
+
+    font-size: 17px;
+    font-weight: 650;
+    line-height: 1.2;
+  }
+
+  .credibility__stat p {
+    margin: 0;
+
+    color: var(--color-text-secondary);
+
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 900px) {
+    .credibility {
+      padding: 96px 0;
+    }
+
+    .credibility__header {
+      grid-template-columns: 1fr;
+      gap: 28px;
+
+      margin-bottom: 64px;
+    }
+
+    .credibility__title br {
+      display: none;
+    }
+
+    .credibility__stats {
+      grid-template-columns: 1fr;
+    }
+
+    .credibility__stat {
+      grid-template-columns: 150px 1fr;
+    }
+
+    .credibility__stat:first-child {
+      padding-right: 0;
+
+      border-right: 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .credibility__stat:last-child {
+      padding-left: 0;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .credibility {
+      padding: 80px 0;
+    }
+
+    .credibility__header {
+      margin-bottom: 48px;
+    }
+
+    .credibility__description {
+      font-size: 17px;
+    }
+
+    .credibility__stat {
+      grid-template-columns: 1fr;
+      gap: 14px;
+
+      padding: 28px 0;
+    }
+
+    .credibility__number {
+      font-size: 26px;
+    }
+  }
+</style>

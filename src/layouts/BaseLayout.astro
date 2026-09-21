@@ -1,0 +1,29 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Atata Labs — Websites & Apps Built for Your Business",
+  description = "Atata Labs designs and develops modern websites, web applications, and mobile applications.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <meta name="description" content={description} />
+
+    <title>{title}</title>
+  </head>
+
+  <body>
+    <slot />
+  </body>
+</html>

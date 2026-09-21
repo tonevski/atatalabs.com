@@ -1,0 +1,334 @@
+---
+const currentYear = new Date().getFullYear();
+
+const navigation = [
+  { label: "Work", href: "/work" },
+  { label: "Services", href: "/services" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
+];
+
+const services = [
+  {
+    label: "Website Development",
+    href: "/services/website-development",
+  },
+  {
+    label: "Web Applications",
+    href: "/services/web-applications",
+  },
+  {
+    label: "Mobile Applications",
+    href: "/services/mobile-applications",
+  },
+  {
+    label: "Ongoing Support",
+    href: "/services/ongoing-support",
+  },
+];
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__main">
+      <!-- Brand -->
+
+      <div class="footer__brand">
+        <a class="footer__logo" href="/" aria-label="Atata Labs home">
+          <span>ATATA</span>
+          <span class="footer__logo-labs">LABS</span>
+        </a>
+
+        <p class="footer__description">
+          Websites, web applications, mobile applications, and ongoing
+          development support.
+        </p>
+      </div>
+
+      <!-- Navigation -->
+
+      <div class="footer__column">
+        <p class="footer__label">Explore</p>
+
+        <nav aria-label="Footer navigation">
+          <ul class="footer__links">
+            {
+              navigation.map((item) => (
+                <li>
+                  <a href={item.href}>{item.label}</a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Services -->
+
+      <div class="footer__column">
+        <p class="footer__label">Services</p>
+
+        <ul class="footer__links">
+          {
+            services.map((service) => (
+              <li>
+                <a href={service.href}>{service.label}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <!-- Contact -->
+
+      <div class="footer__column footer__contact">
+        <p class="footer__label">Get in touch</p>
+
+        <a class="footer__email" href="mailto:hello@atatalabs.com">
+          hello@atatalabs.com
+          <span aria-hidden="true">↗</span>
+        </a>
+
+        <p class="footer__availability">
+          Available for new projects and long-term partnerships.
+        </p>
+      </div>
+    </div>
+
+    <!-- Bottom -->
+
+    <div class="footer__bottom">
+      <p>© {currentYear} Atata Labs. All rights reserved.</p>
+
+      <p>Websites and apps built for your business.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    padding: 0 0 32px;
+
+    background: var(--color-text);
+    color: #ffffff;
+  }
+
+  /*
+   * Main
+   */
+
+  .footer__main {
+    display: grid;
+    grid-template-columns: 1.6fr 0.7fr 1fr 1.2fr;
+    gap: 64px;
+
+    padding: 72px 0 80px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  /*
+   * Brand
+   */
+
+  .footer__brand {
+    max-width: 320px;
+  }
+
+  .footer__logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    margin-bottom: 24px;
+
+    color: #ffffff;
+
+    font-size: 18px;
+    font-weight: 750;
+    line-height: 1;
+
+    letter-spacing: -0.04em;
+  }
+
+  .footer__logo-labs {
+    color: var(--color-accent);
+  }
+
+  .footer__description {
+    max-width: 300px;
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.52);
+
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /*
+   * Columns
+   */
+
+  .footer__label {
+    margin: 0 0 22px;
+
+    color: rgba(255, 255, 255, 0.4);
+
+    font-size: 11px;
+    font-weight: 650;
+    line-height: 1;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .footer__links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  .footer__links a {
+    color: rgba(255, 255, 255, 0.72);
+
+    font-size: 14px;
+    line-height: 1.5;
+
+    transition: color var(--transition);
+  }
+
+  .footer__links a:hover {
+    color: #ffffff;
+  }
+
+  /*
+   * Contact
+   */
+
+  .footer__email {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+
+    transition: color var(--transition);
+  }
+
+  .footer__email span {
+    transition: transform var(--transition);
+  }
+
+  .footer__email:hover {
+    color: var(--color-accent);
+  }
+
+  .footer__email:hover span {
+    transform: translate(2px, -2px);
+  }
+
+  .footer__availability {
+    max-width: 260px;
+    margin: 20px 0 0;
+
+    color: rgba(255, 255, 255, 0.45);
+
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  /*
+   * Bottom
+   */
+
+  .footer__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+
+    padding-top: 28px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .footer__bottom p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.36);
+
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  /*
+   * Tablet
+   */
+
+  @media (max-width: 1000px) {
+    .footer__main {
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 56px 40px;
+    }
+
+    .footer__brand {
+      grid-column: 1 / -1;
+
+      max-width: 420px;
+    }
+  }
+
+  /*
+   * Mobile
+   */
+
+  @media (max-width: 700px) {
+    .footer {
+      padding-bottom: 24px;
+    }
+
+    .footer__main {
+      grid-template-columns: 1fr 1fr;
+      gap: 48px 28px;
+
+      padding: 56px 0 64px;
+    }
+
+    .footer__brand {
+      grid-column: 1 / -1;
+    }
+
+    .footer__contact {
+      grid-column: 1 / -1;
+    }
+
+    .footer__bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+
+      padding-top: 24px;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .footer__main {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .footer__brand,
+    .footer__contact {
+      grid-column: auto;
+    }
+  }
+</style>

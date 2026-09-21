@@ -1,0 +1,159 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import CTA from "../components/CTA.astro";
+import Footer from "../components/Footer.astro";
+
+const services = [
+  {
+    number: "01",
+    title: "Website Development",
+    description:
+      "Modern websites built from scratch with a focus on performance, usability, and maintainability.",
+  },
+  {
+    number: "02",
+    title: "Web Applications",
+    description:
+      "Custom web applications and tools designed around your business and the way it works.",
+  },
+  {
+    number: "03",
+    title: "Mobile Applications",
+    description:
+      "Modern mobile applications for iOS and Android, built for real-world use.",
+  },
+  {
+    number: "04",
+    title: "Ongoing Support",
+    description:
+      "Long-term development, maintenance, improvements, and technical support as your business evolves.",
+  },
+];
+---
+
+<BaseLayout
+  title="Services — Atata Labs"
+  description="Website development, web applications, mobile applications, and ongoing development support."
+>
+  <Header />
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">WHAT WE DO</p>
+
+        <h1>
+          From idea to launch.<br />
+          And what comes next.
+        </h1>
+
+        <p class="intro">
+          We design, develop, and support digital products for businesses that
+          want reliable technology without unnecessary complexity.
+        </p>
+      </div>
+    </section>
+
+    <section class="services">
+      <div class="container">
+        {
+          services.map((service) => (
+            <article class="service">
+              <span class="service__number">{service.number}</span>
+
+              <h2>{service.title}</h2>
+
+              <p>{service.description}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <CTA />
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding: 120px 0 100px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .eyebrow {
+    margin: 0 0 28px;
+    color: var(--color-accent);
+    font-size: 13px;
+    font-weight: 650;
+    letter-spacing: 0.08em;
+  }
+
+  h1 {
+    max-width: 950px;
+    margin: 0 0 36px;
+    font-size: clamp(50px, 6vw, 82px);
+    font-weight: 700;
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+  }
+
+  .intro {
+    max-width: 620px;
+    margin: 0;
+    color: var(--color-text-secondary);
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  .services {
+    padding: 40px 0 120px;
+  }
+
+  .service {
+    display: grid;
+    grid-template-columns: 100px 1fr 1fr;
+    gap: 48px;
+    padding: 64px 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .service__number {
+    color: var(--color-accent);
+    font-size: 13px;
+    font-weight: 650;
+  }
+
+  .service h2 {
+    margin: 0;
+    font-size: clamp(28px, 3vw, 42px);
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+  }
+
+  .service p {
+    max-width: 460px;
+    margin: 0;
+    color: var(--color-text-secondary);
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  @media (max-width: 680px) {
+    .page-hero {
+      padding: 80px 0;
+    }
+
+    .services {
+      padding-bottom: 80px;
+    }
+
+    .service {
+      grid-template-columns: 1fr;
+      gap: 18px;
+      padding: 48px 0;
+    }
+  }
+</style>

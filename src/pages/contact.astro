@@ -1,0 +1,175 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout
+  title="Start a Project — Atata Labs"
+  description="Have a project in mind? Get in touch with Atata Labs."
+>
+  <Header />
+
+  <main>
+    <section class="contact">
+      <div class="container">
+        <p class="contact__eyebrow">START A PROJECT</p>
+
+        <h1 class="contact__title">
+          Tell us what<br />
+          you're working on.
+        </h1>
+
+        <p class="contact__intro">
+          Need a website, web or mobile application, or ongoing development
+          support? Tell us a little about your project.
+        </p>
+
+        <a
+          class="contact__email"
+          href="mailto:hello@atatalabs.com"
+        >
+          <span class="contact__email-label">EMAIL US</span>
+
+          <span class="contact__email-address">
+            hello@atatalabs.com
+            <span class="contact__email-arrow" aria-hidden="true">↗</span>
+          </span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .contact {
+    min-height: calc(100vh - 88px);
+    display: flex;
+    align-items: center;
+
+    padding: 120px 0;
+
+    background: var(--color-bg);
+  }
+
+  .contact__eyebrow {
+    margin: 0 0 28px;
+
+    color: var(--color-accent);
+
+    font-size: 13px;
+    font-weight: 650;
+    line-height: 1;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .contact__title {
+    max-width: 900px;
+
+    margin: 0 0 36px;
+
+    color: var(--color-text);
+
+    font-size: clamp(56px, 7vw, 96px);
+    font-weight: 700;
+    line-height: 0.95;
+
+    letter-spacing: -0.06em;
+  }
+
+  .contact__intro {
+    max-width: 590px;
+
+    margin: 0 0 48px;
+
+    color: var(--color-text-secondary);
+
+    font-size: 19px;
+    line-height: 1.65;
+  }
+
+  .contact__email {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+
+    padding: 24px 28px;
+
+    background: var(--color-accent);
+    color: #ffffff;
+
+    transition:
+      background var(--transition),
+      transform var(--transition);
+  }
+
+  .contact__email-label {
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+
+    letter-spacing: 0.1em;
+  }
+
+  .contact__email-address {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    font-size: clamp(25px, 3vw, 38px);
+    font-weight: 700;
+    line-height: 1.1;
+
+    letter-spacing: -0.04em;
+  }
+
+  .contact__email-arrow {
+    font-size: 0.65em;
+
+    transition: transform var(--transition);
+  }
+
+  .contact__email:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-2px);
+  }
+
+  .contact__email:hover .contact__email-arrow {
+    transform: translate(4px, -4px);
+  }
+
+  @media (max-width: 700px) {
+    .contact {
+      min-height: calc(100vh - 72px);
+      padding: 80px 0;
+    }
+
+    .contact__title br {
+      display: none;
+    }
+
+    .contact__intro {
+      margin-bottom: 36px;
+
+      font-size: 17px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .contact__email {
+      width: 100%;
+      padding: 22px;
+    }
+
+    .contact__email-address {
+      gap: 10px;
+
+      font-size: clamp(21px, 6vw, 28px);
+    }
+  }
+</style>

@@ -1,0 +1,221 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import CTA from "../components/CTA.astro";
+import Footer from "../components/Footer.astro";
+
+const projects = [
+  {
+    title: "Cellaxys",
+    category: "Healthcare website",
+    image: "/images/work/cellaxys.png",
+    href: "/work/cellaxys",
+  },
+  {
+    title: "DeveloperWeek",
+    category: "Developer conference platform",
+    image: null,
+    href: "/work/developerweek",
+  },
+  {
+    title: "Primmed",
+    category: "Healthcare website",
+    image: null,
+    href: "/work/primmed",
+  },
+  {
+    title: "API World",
+    category: "Developer conference website",
+    image: null,
+    href: "/work/api-world",
+  },
+];
+---
+
+<BaseLayout
+  title="Work — Atata Labs"
+  description="Selected websites and digital products built by Atata Labs."
+>
+  <Header />
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">OUR WORK</p>
+
+        <h1>
+          Things we've<br />
+          built.
+        </h1>
+
+        <p class="intro">
+          Websites and digital products built for companies across healthcare,
+          technology, events, and other industries.
+        </p>
+      </div>
+    </section>
+
+    <section class="projects">
+      <div class="container">
+        <div class="projects__grid">
+          {
+            projects.map((project) => (
+              <a class="project" href={project.href}>
+                <div class="project__visual">
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={`${project.title} website`}
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div class="project__placeholder">
+                      {project.title}
+                    </div>
+                  )}
+                </div>
+
+                <div class="project__meta">
+                  <div>
+                    <h2>{project.title}</h2>
+                    <p>{project.category}</p>
+                  </div>
+
+                  <span>↗</span>
+                </div>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <CTA />
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding: 120px 0 100px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .eyebrow {
+    margin: 0 0 28px;
+    color: var(--color-accent);
+    font-size: 13px;
+    font-weight: 650;
+    letter-spacing: 0.08em;
+  }
+
+  h1 {
+    max-width: 800px;
+    margin: 0 0 36px;
+    font-size: clamp(56px, 7vw, 96px);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+  }
+
+  .intro {
+    max-width: 600px;
+    margin: 0;
+    color: var(--color-text-secondary);
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  .projects {
+    padding: 120px 0;
+  }
+
+  .projects__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 72px 32px;
+  }
+
+  .project__visual {
+    display: flex;
+    align-items: flex-end;
+    aspect-ratio: 16 / 11;
+    overflow: hidden;
+    padding: 20px 20px 0;
+    background: var(--color-bg-subtle);
+  }
+
+  .project:nth-child(1) .project__visual {
+    background: #dce9e6;
+  }
+
+  .project:nth-child(2) .project__visual {
+    background: #25243d;
+  }
+
+  .project:nth-child(3) .project__visual {
+    background: #e7ecef;
+  }
+
+  .project:nth-child(4) .project__visual {
+    background: #18273c;
+  }
+
+  .project__visual img,
+  .project__placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  .project__visual img {
+    object-fit: contain;
+    background: #fff;
+  }
+
+  .project__placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    font-weight: 650;
+  }
+
+  .project__meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    padding-top: 20px;
+  }
+
+  .project__meta h2 {
+    margin: 0 0 5px;
+    font-size: 20px;
+    line-height: 1.3;
+  }
+
+  .project__meta p {
+    margin: 0;
+    color: var(--color-text-secondary);
+    font-size: 14px;
+  }
+
+  .project__meta span {
+    font-size: 18px;
+  }
+
+  @media (max-width: 680px) {
+    .page-hero {
+      padding: 80px 0;
+    }
+
+    .projects {
+      padding: 80px 0;
+    }
+
+    .projects__grid {
+      grid-template-columns: 1fr;
+      gap: 52px;
+    }
+  }
+</style>

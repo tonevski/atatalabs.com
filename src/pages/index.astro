@@ -11,31 +11,26 @@ import CTA from "../components/CTA.astro";
 import Footer from "../components/Footer.astro";
 ---
 
-{/* Wraps the homepage in the shared site layout. */}
 <BaseLayout>
-  {/* Site header and primary navigation. */}
+  
   <Header />
 
   <main>
-    {/* Introduces Atata Labs: websites and apps for businesses, with links to contact and work. */}
+
     <Hero />
 
-    {/* Explains the focus on lasting partnerships, supported by years working with clients. */}
     <Credibility />
 
-    {/* Summarizes website development, web and mobile applications, and ongoing support. */}
     <Services />
 
-    {/* Showcases selected projects so visitors can explore examples of the team's work. */}
     <SelectedWork />
 
-    {/* Shares client feedback about quality, communication, and long-term reliability. */}
     <Testimonials />
 
-    {/* Call to action: invites visitors to discuss a project through the contact page. */}
     <CTA />
+
   </main>
 
-  {/* Shared site footer. */}
   <Footer />
+
 </BaseLayout>

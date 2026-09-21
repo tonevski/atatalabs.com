@@ -1,9 +1,81 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
-import Testimonials from "../components/Testimonials.astro";
 import CTA from "../components/CTA.astro";
 import Footer from "../components/Footer.astro";
+
+const testimonials = [
+  {
+    name: "Geoff Domoracki",
+    role: "Founder & CEO",
+    company: "DevNetwork",
+    image: "/images/testimonials/geoff-domoracki.jpg",
+    quote: "Nikola has led our front-end development work across web and email media for the last 10 years, and we’ve been very impressed with the professionalism and quality of his work. He’s brought the talents of many different types of design and development to our company, and we highly recommend him.",
+  },
+  {
+    name: "Kareem Assassa",
+    role: "CEO",
+    company: "International Academy of Aesthetics",
+    image: "/images/testimonials/kareem-assassa.jpg",
+    quote: "Nikola was an absolute pleasure to work with. We leaned on his expertise throughout the entire website project and he created such an amazing website for us. He was responsive, timely, and professional throughout the entire project. He was also very efficient with his work as well as clear with his communication. I would highly recommend his services and will continue to utilize him for all of our website needs.",
+  },
+  {
+    name: "Parisa Bady",
+    role: "Founder",
+    company: "Meros Media",
+    image: "/images/testimonials/parisa-bady.jpg",
+    quote: "I’ve worked with Nikola for quite a while now. He’s an amazing developer, quick and to the point, and always on top of all the requests. I never have to follow up on any tasks assigned to him, I can just send him an email and consider it done. Nikola is very knowledgeable in working with WordPress. He has developed and managed 5 different websites for me and my clients and he’s my go-to person for all future websites.",
+  },
+  {
+    name: "Corey Crowley",
+    role: "Founder & CTO",
+    company: "Orange Bees",
+    image: "/images/testimonials/corey-crowley.jpg",
+    quote: "We have been working with Nikola for a couple of years now and we have been very pleased with our working relationship. Nikola’s attention to detail and sense of urgency allow us to simply hand over specifications and let him manage the entire development and testing process. We have come to trust him enough to allow him to interact directly with our customers.",
+  },
+  {
+    name: "Chan Ngee Key",
+    role: "Senior Consultant",
+    company: "PERSOLKELLY Consulting",
+    image: "/images/testimonials/chan-ngee-key.jpg",
+    quote: "Nikola has done an outstanding job in creating one of my most challenging online portal projects. He is creative, and responsible and will go beyond the extra mile to create a great website. It's my honor to have him design and develop this project. He is very patient despite my frequent changes and demands. But he took it very well, and produced a beautifully crafted online portal which I'm proud of. Thanks a lot and you will be assured by his expertise and accountability to deliver your project that oversees your expectations.",
+  },
+  {
+    name: "Martyn Anstey",
+    role: "Founder and CEO",
+    company: "RE.IMAGINE",
+    image: "/images/testimonials/martyn-anstey.jpg",
+    quote: "Nikola is a rare find. Nikola goes above and beyond to exceed expectations and is the real deal who is not only a pleasure to work with but adds true value to a project. If you want someone you can trust to deliver high-quality websites to deliver commercial outcomes then look no further. A refreshing change from the UpWork ‘norm’. A top find and an asset to any team.",
+  },
+  {
+    name: "Paul Pazmandy",
+    role: "Sales and Technical Director",
+    company: "Politech Group",
+    image: "/images/testimonials/paul-pazmandy.jpg",
+    quote: "It was a pleasure to work with Nikola. He was always available when I need him, took the time to explain all details and completed all work professionally and promptly. Nikola is very trustworthy and reliable and he does perfect work.",
+  },
+  {
+    name: "Stefano Solferini",
+    role: "Founder and CEO",
+    company: "Marco Polo Group",
+    image: "/images/testimonials/stefano-solferini.jpg",
+    quote: "Outstanding. High Quality. Fast. Focused. Responsive. Listens. Did an amazing job on an extremely tight deadline, set an entire website up in a couple of days working round the clock. Look no further, just hire him.",
+  },
+  {
+    name: "Ian Baddock",
+    role: "Director",
+    company: "Syntagium Consulting",
+    image: "/images/testimonials/ian-baddock.jpg",
+    quote: "Nikola was a pleasure to work with and he was able to turn the job around very quickly. Being my first experience with UpWork, I wasn’t sure what to expect. I’m extremely satisfied with what I received. I’ll be using Nikola again!",
+  },
+  {
+    name: "John Todorovski",
+    role: "CEO",
+    company: "StadiaConnect",
+    image: "/images/testimonials/john-todorovski.jpg",
+    quote: "Nikola delivered good work on this development project and I enjoyed working with him.",
+  },
+];
 ---
 
 <BaseLayout
@@ -16,12 +88,37 @@ import Footer from "../components/Footer.astro";
     <section class="page-hero">
       <div class="container">
         <p class="eyebrow">TESTIMONIALS</p>
-        <h1>In our clients’ words.</h1>
+        <h1>Testimonials</h1>
+        <p class="page-intro">
+          Many of my clients have worked with me for five to ten years or more.
+          That level of trust comes from showing up consistently and taking responsibility.
+        </p>
       </div>
     </section>
 
-    {/* Reuses the client quotes shown on the homepage. */}
-    <Testimonials />
+    {/* Geoff leads the grid; the remaining testimonials follow in two columns. */}
+    <section class="testimonials" aria-label="Client testimonials">
+      <div class="container">
+        <div class="testimonials__grid">
+          {testimonials.map((testimonial, index) => (
+            <article class:list={["testimonial", { "testimonial--featured": index === 0 }]}>
+              <span class="testimonial__quote-mark" aria-hidden="true">“</span>
+              <blockquote>{testimonial.quote}</blockquote>
+              <footer class="testimonial__author">
+                {testimonial.image && (
+                  <img src={testimonial.image} alt="" width="52" height="52" loading="lazy" />
+                )}
+                <div class="testimonial__author-info">
+                  <strong>{testimonial.name}</strong>
+                  <span>{testimonial.role}</span>
+                  <span>{testimonial.company}</span>
+                </div>
+              </footer>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
 
     {/* Invites visitors to get in touch about their own project. */}
     <CTA />
@@ -53,7 +150,107 @@ import Footer from "../components/Footer.astro";
     letter-spacing: -0.06em;
   }
 
+  .page-intro {
+    max-width: 680px;
+    margin: 32px 0 0;
+    color: var(--color-text-secondary);
+    font-size: 18px;
+    line-height: 1.65;
+  }
+
+  .testimonials {
+    padding: 120px 0;
+    background: var(--color-bg-subtle);
+  }
+
+  .testimonials__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid var(--color-border);
+    border-left: 1px solid var(--color-border);
+  }
+
+  .testimonial {
+    display: flex;
+    flex-direction: column;
+    padding: 48px;
+    border-right: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-bg);
+  }
+
+  .testimonial--featured {
+    grid-column: 1 / -1;
+  }
+
+  .testimonial__quote-mark {
+    height: 44px;
+    margin-bottom: 32px;
+    color: var(--color-accent);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 72px;
+    line-height: 0.9;
+  }
+
+  .testimonial blockquote {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.65;
+    letter-spacing: -0.01em;
+  }
+
+  .testimonial--featured blockquote {
+    max-width: 1000px;
+    font-size: clamp(24px, 2vw, 31px);
+    line-height: 1.45;
+    letter-spacing: -0.025em;
+  }
+
+  .testimonial__author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: auto;
+    padding-top: 40px;
+  }
+
+  .testimonial__author img {
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+    padding: 3px;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  .testimonial__author-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 13px;
+    line-height: 1.35;
+    color: var(--color-text-secondary);
+  }
+
+  .testimonial__author-info strong {
+    color: var(--color-text);
+    font-size: 15px;
+    font-weight: 650;
+  }
+
+  @media (max-width: 900px) {
+    .testimonial {
+      padding: 32px 28px;
+    }
+  }
+
   @media (max-width: 680px) {
+    .testimonials__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .testimonials,
     .page-hero {
       padding: 80px 0;
     }

@@ -8,24 +8,28 @@ const services = [
   {
     number: "01",
     title: "Website Development",
+    href: "/services/website-development",
     description:
       "Modern websites built from scratch with a focus on performance, usability, and maintainability.",
   },
   {
     number: "02",
     title: "Web Applications",
+    href: "/services/web-applications",
     description:
       "Custom web applications and tools designed around your business and the way it works.",
   },
   {
     number: "03",
     title: "Mobile Applications",
+    href: "/services/mobile-applications",
     description:
       "Modern mobile applications for iOS and Android, built for real-world use.",
   },
   {
     number: "04",
     title: "Ongoing Support",
+    href: "/services/ongoing-support",
     description:
       "Long-term development, maintenance, improvements, and technical support as your business evolves.",
   },
@@ -62,7 +66,7 @@ const services = [
             <article class="service">
               <span class="service__number">{service.number}</span>
 
-              <h2>{service.title}</h2>
+              <h2><a href={service.href}>{service.title}</a></h2>
 
               <p>{service.description}</p>
             </article>
@@ -139,6 +143,10 @@ const services = [
     color: var(--color-text-secondary);
     font-size: 17px;
     line-height: 1.7;
+  }
+
+  .service h2 a:hover {
+    color: var(--color-accent);
   }
 
   @media (max-width: 680px) {
